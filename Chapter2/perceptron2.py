@@ -97,6 +97,9 @@ class perceptron:
 
                     deltaW = self.a * self.y[i] * xi
                     deltaB = self.a * self.y[i]
+                    # print("deltaB = ", deltaB)
+                    # if abs(deltaB) < self.a:
+                    #     flag = False
                     self.w = self.w + deltaW.reshape(self.w.shape)
                     self.b = self.b + deltaB
             if count == 0:
@@ -105,24 +108,36 @@ class perceptron:
 
 
 #%%
-x1 = np.array((-0.8, 0.9))
-x2 = np.array((-0.75, 0.6))
-x3 = np.array((-0.6, 0.7))
-x4 = np.array((-0.4, 0.75))
-x5 = np.array((-0.2, -0.2))
+# x1 = np.array((-0.8, 0.9))
+# x2 = np.array((-0.75, 0.6))
+# x3 = np.array((-0.6, 0.7))
+# x4 = np.array((-0.4, 0.75))
+# x5 = np.array((-0.2, -0.2))
 
-x6 = np.array((0.25, 0.65))
-x7 = np.array((0.35, -0.5))
-x8 = np.array((0.4, 0.4))
-x9 = np.array((0.6, -0.9))
-x10 = np.array((0.9, 0.8))
+# x6 = np.array((0.25, 0.65))
+# x7 = np.array((0.35, -0.5))
+# x8 = np.array((0.4, 0.4))
+# x9 = np.array((0.6, -0.9))
+# x10 = np.array((0.9, 0.8))
 
 
-y1 = y2 = y3 = y4 = y5 = 1
-y6 = y7 = y8 = y9 = y10 = -1
+# y1 = y2 = y3 = y4 = y5 = 1
+# y6 = y7 = y8 = y9 = y10 = -1
 
-x = np.array((x1, x2, x3, x4, x5, x6, x7, x8, x9, x10))
-y = np.array((y1, y2, y3, y4, y5, y6, y7, y8, y9, y10))
+# x = np.array((x1, x2, x3, x4, x5, x6, x7, x8, x9, x10))
+# y = np.array((y1, y2, y3, y4, y5, y6, y7, y8, y9, y10))
+
+x1 = np.array((0, 0))
+x2 = np.array((1, 1))
+x3 = np.array((0, 1))
+x4 = np.array((1, 0))
+
+y1 = y2 = 1
+y3 = y4 = -1
+
+x = np.array((x1, x2, x3, x4))
+y = np.array((y1, y2, y3, y4))
+
 
 #%%
 p = perceptron(x, y)
